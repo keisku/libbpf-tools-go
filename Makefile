@@ -6,3 +6,7 @@ generate: export BPF_CFLAGS := $(CFLAGS)
 generate:
 	bpftool btf dump file /sys/kernel/btf/vmlinux format c > ./headers/vmlinux.h
 	go generate ./...
+
+build: export CGO_ENABLED := 0
+build:
+	go build -o ./bin ./cmd/execsnoop
