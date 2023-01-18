@@ -10,3 +10,4 @@ generate:
 build: export CGO_ENABLED := 0
 build:
 	go build -o ./bin ./cmd/execsnoop
+	go build -o ./bin ./cmd/tcpconnect
